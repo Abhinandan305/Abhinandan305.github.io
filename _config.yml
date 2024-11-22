@@ -39,7 +39,7 @@ instagram_username: abhinandan_in_uk
 linkedin_username: Abhinandan Das
 
 # About Section
-about_profile_image: images/profile.jpg
+about_profile_image: images/profile.png
 about_content: | # this will include new lines to allow paragraphs
   **About Me**  
 
@@ -170,7 +170,7 @@ content:
       Outside of academics and work, my interests and hobbies include:
       - Fitness and Hiking
       - Photography
-      - Premier League Football
+      - Football
       - Exploring data science trends and innovations.
 
 # Footer
