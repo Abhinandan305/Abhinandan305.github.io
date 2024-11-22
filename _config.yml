@@ -15,20 +15,10 @@ website: https://abhinandan305.github.io/
 darkmode: true
 
 # Social links
-twitter_username: facespics
-github_username:  sproogen
-# stackoverflow_username: "00000001"
-# dribbble_username: jekyll
-# facebook_username: jekyll
-# flickr_username: jekyll
+github_username: Abhinandan305
 instagram_username: abhinandan_in_uk
-linkedin_username: Abhinandan Das
-# xing_username: jekyll
-# pinterest_username: jekyll
+linkedin_username: abhinandan-das
 
-# Site
-repository: sproogen/resume-theme
-favicon: images/favicon.ico
 
 # Content configuration version
 version: 2
@@ -55,16 +45,14 @@ about_content: | # this will include new lines to allow paragraphs
 
   Welcome! I am Abhinandan Das, a Master's student in Data Science (Business and Management) at the University of Manchester, driven by a passion for transforming data into actionable insights. With a Global Futures Scholarship and a strong academic foundation, my expertise spans Python for Business Analytics, Text Mining, and Statistics and Machine Learning. My dissertation focuses on Sequence Mining and Aspect Detection using NLP on Airbnb reviews.  
 
-  I bring two years of professional experience as a Business Analyst at LTIMindtree, where I worked with ABSA to deliver impactful results in financial data analysis, application support, and strategic decision-making. I excelled in designing reports and dashboards, conducting root cause analyses, and maintaining exceptional client satisfaction. My work emphasized efficiency and operational excellence, supported by tools like Power BI, Tableau, and SQL.  
-
-  In addition, I recently completed a Data Scientist internship at ITV, where I predicted audience engagement for new series using machine learning models, achieving a top accuracy of 83%.  
+  I bring two years of professional experience as a Business Analyst at LTIMindtree, where I worked to deliver impactful results in financial data analysis, application support, and strategic decision-making. I excelled in designing reports and dashboards, conducting root cause analyses, and maintaining exceptional client satisfaction. My work emphasized efficiency and operational excellence, supported by tools like Power BI, Tableau, and SQL.  
 
   Beyond academics and work, I am passionate about solving complex problems through data storytelling and cutting-edge analytics. My technical proficiencies include Python, SQL, MongoDB, and Power BI, complemented by a strong analytical mindset, adaptability, and collaboration skills.  
 
   Let’s connect and explore how data can drive innovation!
 
 content:
-  - title: Projects
+    - title: Projects
     layout: list
     content:
       - layout: top-middle
@@ -74,8 +62,6 @@ content:
           - title: View Project on GitHub
             icon: fab fa-github
             url: https://github.com/Abhinandan305/sequence-mining
-        description: |
-          Analyzed sentiment trends in Airbnb reviews using Natural Language Processing (NLP). Developed sequence mining and aspect detection algorithms to identify key areas for service improvement for Airbnb hosts.
 
       - layout: top-middle
         title: Time Series Analysis and Forecasting
@@ -84,8 +70,6 @@ content:
           - title: View Project on GitHub
             icon: fab fa-github
             url: https://github.com/Abhinandan305/time-series-forecasting
-        description: |
-          Built a Time Series Sales Forecasting model using historical data with ~90% accuracy. Applied Machine Learning models such as Random Forest and XGBoost Regression using Python.
 
       - layout: top-middle
         title: Ecommerce Database System Design
@@ -94,8 +78,47 @@ content:
           - title: View Project on GitHub
             icon: fab fa-github
             url: https://github.com/Abhinandan305/ecommerce-database
-        description: |
-          Designed a NoSQL database system for an e-commerce platform, optimizing queries and visualizing stock management. Added features like same-day delivery and reduced product wastage.
+
+      - layout: top-middle
+        title: Diabetes Prediction using Linear Regression
+        link: github.com/Abhinandan305/DATA-SCIENCE-PROJECTS
+        additional_links:
+          - title: View Project on GitHub
+            icon: fab fa-github
+            url: https://github.com/Abhinandan305/DATA-SCIENCE-PROJECTS
+
+      - layout: top-middle
+        title: Trading Analysis and Forecasting
+        link: github.com/Abhinandan305/DATA-SCIENCE-PROJECTS
+        additional_links:
+          - title: View Project on GitHub
+            icon: fab fa-github
+            url: https://github.com/Abhinandan305/DATA-SCIENCE-PROJECTS
+
+      - layout: top-middle
+        title: Book Recommendation System
+        link: github.com/Abhinandan305/DATA-SCIENCE-PROJECTS
+        additional_links:
+          - title: View Project on GitHub
+            icon: fab fa-github
+            url: https://github.com/Abhinandan305/DATA-SCIENCE-PROJECTS
+
+      - layout: top-middle
+        title: Rossman Store Sales Prediction
+        link: github.com/Abhinandan305/DATA-SCIENCE-PROJECTS
+        additional_links:
+          - title: View Project on GitHub
+            icon: fab fa-github
+            url: https://github.com/Abhinandan305/DATA-SCIENCE-PROJECTS
+
+      - layout: top-middle
+        title: Text Mining - Named Entity Recognition (NER)
+        link: github.com/Abhinandan305/DATA-SCIENCE-PROJECTS
+        additional_links:
+          - title: View Project on GitHub
+            icon: fab fa-github
+            url: https://github.com/Abhinandan305/DATA-SCIENCE-PROJECTS
+
 
   - title: Experience
     layout: list
@@ -149,10 +172,6 @@ content:
       - Photography
       - Premier League Football
       - Exploring data science trends and innovations.
-
-
-      Look at this cool image  
-      ![Trees](/modern-resume-theme/images/landscape-trees.jpg "Trees")
 
 # Footer
 footer_show_references: true
