@@ -1,271 +1,360 @@
-<!DOCTYPE html>
+  <!DOCTYPE html>
   <html lang="en" class="scroll-smooth">
   <head>
       <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <title>Abhinandan | AI Engineer & Data Scientist</title>
+      <title>Abhinandan | AI & ML Systems Engineer</title>
       <script src="https://cdn.tailwindcss.com"></script>
       <script src="https://unpkg.com/lucide@latest"></script>
-      <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Fira+Code:wght@400;500&display=swap" 
+      <!-- AOS for Animations -->
+      <link href="https://unpkg.com/ AOS@2.3.1/dist/aos.css" rel="stylesheet">
+      <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+      <link 
+  href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&family=Fira+Code:wght@400;500&display=swap" 
   rel="stylesheet">
       <style>
-          body { font-family: 'Inter', sans-serif; }
+          body { font-family: 'Plus Jakarta Sans', sans-serif; }
           .code-font { font-family: 'Fira Code', monospace; }
+
+          /* Glassmorphism */
           .glass {
-              background: rgba(30, 41, 59, 0.7);
-              backdrop-filter: blur(12px);
-              border: 1px solid rgba(255, 255, 255, 0.1);
+              background: rgba(15, 23, 42, 0.6);
+              backdrop-filter: blur(16px);
+              border: 1px solid rgba(255, 255, 255, 0.08);
           }
+
+          /* Animated Gradient Text */
           .gradient-text {
-              background: linear-gradient(to right, #818cf8, #c084fc);
+              background: linear-gradient(135deg, #818cf8, #c084fc, #fb7185, #818cf8);
+              background-size: 300% 300%;
               -webkit-background-clip: text;
               -webkit-text-fill-color: transparent;
+              animation: gradientMove 8s ease infinite;
           }
-          .blob {
+
+          @keyframes gradientMove {
+              0% { background-position: 0% 50%; }
+              50% { background-position: 100% 50%; }
+              100% { background-position: 0% 50%; }
+          }
+
+          /* Bento Hover Effects */
+          .bento-item {
+              transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+          }
+          .bento-item:hover {
+              transform: translateY(-8px) scale(1.01);
+              border-color: rgba(129, 140, 248, 0.5);
+              box-shadow: 0 25px 50px -12px rgba(99, 102, 241, 0.3);
+          }
+
+          /* Animated Background Blobs */
+          .bg-blob {
               position: absolute;
-              width: 500px;
-              height: 500px;
-              background: rgba(99, 102, 241, 0.15);
-              filter: blur(80px);
-              border-radius: 50%;
+              width: 600px;
+              height: 600px;
+              background: radial-gradient(circle, rgba(99, 102, 241, 0.15) 0%, transparent 70%);
               z-index: -1;
+              filter: blur(60px);
+              animation: blobMove 20s infinite alternate;
+          }
+          @keyframes blobMove {
+              from { transform: translate(-10%, -10%); }
+              to { transform: translate(10%, 10%); }
           }
       </style>
   </head>
-  <body class="bg-[#0f172a] text-slate-200 overflow-x-hidden">
+  <body class="bg-[#020617] text-slate-200 overflow-x-hidden">
 
-      <!-- Decorative Background Blobs -->
-      <div class="blob top-[-10%] left-[-10%]"></div>
-      <div class="blob bottom-[-10%] right-[-10%]"></div>
+      <!-- Background Effects -->
+      <div class="bg-blob top-[-10%] left-[-10%]"></div>
+      <div class="bg-blob bottom-[-10%] right-[-10%]" style="animation-delay: -10s; background: radial-gradient(circle, rgba(192, 132,
+  252, 0.15) 0%, transparent 70%);"></div>
 
-      <!-- Navigation -->
-      <nav class="fixed top-0 w-full z-50 glass border-b border-slate-800">
-          <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
-              <span class="code-font font-bold text-xl tracking-tighter">
-                  <span class="text-indigo-400">&lt;</span>Abhinandan<span class="text-indigo-400"> /&gt;</span>
+      <!-- Navbar -->
+      <nav class="fixed top-0 w-full z-50 glass border-b border-white/5">
+          <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+              <span class="code-font font-bold text-xl tracking-tighter text-white">
+                  <span class="text-indigo-500">&lt;</span>Abhinandan<span class="text-indigo-500"> /&gt;</span>
               </span>
-              <div class="hidden md:flex space-x-8 text-sm font-medium">
-                  <a href="#projects" class="hover:text-indigo-400 transition-colors">Projects</a>
-                  <a href="#skills" class="hover:text-indigo-400 transition-colors">Skills</a>
-                  <a href="https://github.com/Abhinandan305" target="_blank" class="px-4 py-2 rounded-full bg-indigo-600
-  hover:bg-indigo-500 text-white transition-all">GitHub</a>
+              <div class="hidden md:flex space-x-8 items-center text-sm font-medium text-slate-400">
+                  <a href="#projects" class="hover:text-white transition-colors">Projects</a>
+                  <a href="#skills" class="hover:text-white transition-colors">Technical Stack</a>
+                  <a href="https://github.com/Abhinandan305" target="_blank" class="px-5 py-2 rounded-full bg-white text-black
+  hover:bg-indigo-400 transition-all font-bold">GitHub</a>
               </div>
           </div>
       </nav>
 
       <!-- Hero Section -->
-      <section class="pt-32 pb-20 px-6">
-          <div class="max-w-4xl mx-auto text-center">
-              <div class="inline-block px-3 py-1 rounded-full border border-indigo-500/30 bg-indigo-500/10 text-indigo-400 text-xs
-  font-medium mb-6">
-                  Available for Opportunities
+      <section class="pt-40 pb-24 px-6 text-center">
+          <div class="max-w-4xl mx-auto" data-aos="zoom-in" data-aos-duration="1000">
+              <div class="inline-flex items-center space-x-2 px-3 py-1 rounded-full border border-indigo-500/30 bg-indigo-500/10
+  text-indigo-400 text-xs font-bold mb-8">
+                  <span class="relative flex h-2 w-2">
+                      <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-indigo-400 opacity-75"></span>
+                      <span class="relative inline-flex rounded-full h-2 w-2 bg-indigo-500"></span>>
+                  </span>
+                  <span>Open for AI/ML Engineering Roles</span>
               </div>
-              <h1 class="text-5xl md:text-7xl font-bold tracking-tight mb-6">
-                  Building the next generation of <span class="gradient-text">Intelligent Systems</span>
+              <h1 class="text-6xl md:text-8xl font-extrabold tracking-tight mb-8 text-white leading-tight">
+                  Architecting <br><span class="gradient-text">Intelligence</span>
               </h1>
-              <p class="text-slate-400 text-lg md:text-xl mb-10 max-w-2xl mx-auto leading-relaxed">
-                  AI Engineer & Data Scientist specializing in <span class="text-slate-200">RAG Architectures</span>,
-                  Large Language Models, and Predictive Analytics to solve complex business challenges.
+              <p class="text-slate-400 text-lg md:text-xl mb-12 max-w-2xl mx-auto leading-relaxed">
+                  I bridge the gap between raw data and production AI. Specializing in <span class="text-white font-semibold">RAG
+  Pipelines, Neural Networks, and Scalable ML Ops</span>.
               </p>
-              <div class="flex flex-col md:flex-row justify-center gap-4">
-                  <a href="#projects" class="px-8 py-4 rounded-xl bg-indigo-600 hover:bg-indigo-500 font-semibold transition-all transform
-  hover:scale-105 flex items-center justify-center">
-                      View Projects <i data-lucide="arrow-right" class="ml-2 w-5 h-5"></i>
+              <div class="flex flex-col md:flex-row justify-center gap-5">
+                  <a href="#projects" class="px-8 py-4 rounded-2xl bg-indigo-600 hover:bg-indigo-500 text-white font-bold transition-all
+  transform hover:scale-105 flex items-center justify-center">
+                      Explore My Work <i data-lucide="arrow-right" class="ml-2 w-5 h-5"></i>
                   </a>
-                  <a href="mailto:your-email@example.com" class="px-8 py-4 rounded-xl glass hover:bg-slate-800 font-semibold
+                  <a href="mailto:your-email@example.com" class="px-8 py-4 rounded-2xl glass hover:bg-slate-800 text-white font-bold
   transition-all flex items-center justify-center">
-                      Get In Touch <i data-lucide="mail" class="ml-2 w-5 h-5"></i>
+                      Let's Collaborate <i data-lucide="zap" class="ml-2 w-5 h-5 text-yellow-400"></i>
                   </a>
               </div>
           </div>
       </section>
 
-      <!-- Featured Projects Grid -->
-      <section id="projects" class="py-20 px-6">
-          <div class="max-w-6xl mx-auto">
-              <div class="flex justify-between items-end mb-12">
-                  <div>
-                      <h2 class="text-3xl font-bold mb-2">Featured Work</h2>
-                      <p class="text-slate-400">Selected projects demonstrating AI & Data expertise</p>
-                  </div>
-                  <a href="https://github.com/Abhinandan305" class="text-indigo-400 hover:underline text-sm flex items-center">
-                      All Repos <i data-lucide="external-link" class="ml-1 w-4 h-4"></i>
-                  </a>
+      <!-- Featured Projects (Bento Grid) -->
+      <section id="projects" class="py-24 px-6">
+          <div class="max-w-7xl mx-auto">
+              <div class="mb-16 text-center" data-aos="fade-up">
+                  <h2 class="text-4xl font-bold mb-4 text-white">Selected Work</h2>
+                  <p class="text-slate-400">Combining research and engineering to solve real problems</p>
               </div>
 
-              <div class="grid md:grid-cols-3 gap-6">
-                  <!-- Project 1: RAG -->
-                  <div class="glass p-6 rounded-2xl group hover:border-indigo-500/50 transition-all">
-                      <div class="w-12 h-12 bg-indigo-500/20 rounded-lg flex items-center justify-center text-indigo-400 mb-6
-  group-hover:scale-110 transition-transform">
-                          <i data-lucide="database"></i>
+              <div class="grid grid-cols-1 md:grid-cols-12 gap-6">
+
+                  <!-- Project 1: RAG (Big Focus) -->
+                  <div class="md:col-span-8 bento-item glass rounded-3xl overflow-hidden group" data-aos="fade-right">
+                      <div class="grid md:grid-cols-2 h-full">
+                          <div class="p-8 flex flex-col justify-center">
+                              <div class="flex space-x-2 mb-4">
+                                  <span class="px-2 py-1 rounded bg-indigo-500/20 text-indigo-400 text-[10px] font-bold
+  uppercase">GenAI</span>
+                                  <span class="px-2 py-1 rounded bg-blue-500/20 text-blue-400 text-[10px] font-bold uppercase">Vector
+  DB</span>
+                              </div>
+                              <h3 class="text-3xl font-bold mb-4 text-white">Enterprise Multi-Doc RAG</h3>
+                              <p class="text-slate-400 mb-6 leading-relaxed">
+                                  Engineered a high-precision retrieval system that allows LLMs to synthesize answers from hundreds of
+  disparate documents with zero-shot accuracy.
+                              </p>
+                              <div class="flex items-center space-x-4">
+                                  <a href="https://github.com/Abhinandan305/MULTI-DOC-RAG" target="_blank" class="p-3 rounded-full
+  bg-white/5 hover:bg-white/10 text-white transition-all">
+                                      <i data-lucide="github" class="w-5 h-5"></i>
+                                  </a>
+                                  <span class="text-xs font-medium text-slate-500 code-font">LangChain • ChromaDB • OpenAI</span>
+                              </div>
+                          </div>
+                          <div class="relative h-64 md:h-auto overflow-hidden">
+                              <img src="https://images.unsplash.com/photo-1677442136019-16d41356730a?auto=format&fit=crop&q=80&w=800" 
+  class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" alt="RAG System">
+                          </div>
                       </div>
-                      <h3 class="text-xl font-bold mb-3 group-hover:text-indigo-400 transition-colors">Multi-Doc RAG System</h3>
-                      <p class="text-slate-400 text-sm mb-6 leading-relaxed">
-                          An enterprise-grade Retrieval-Augmented Generation system enabling intelligent querying across multiple complex
-  documents using vector embeddings.
-                      </p>
-                      <div class="flex flex-wrap gap-2 mb-6">
-                          <span class="px-2 py-1 rounded-md bg-slate-800 text-[10px] font-medium text-slate-300 border
-  border-slate-700">Python</span>
-                          <span class="px-2 py-1 rounded-md bg-slate-800 text-[10px] font-medium text-slate-300 border
-  border-slate-700">LangChain</span>
-                          <span class="px-2 py-1 rounded-md bg-slate-800 text-[10px] font-medium text-slate-300 border
-  border-slate-700">Vector DB</span>
-                      </div>
-                      <a href="https://github.com/Abhinandan305/MULTI-DOC-RAG" target="_blank" class="inline-flex items-center text-sm
-  font-semibold text-indigo-400 hover:text-indigo-300 transition-colors">
-                          Source Code <i data-lucide="github" class="ml-1 w-4 h-4"></i>
-                      </a>
                   </div>
 
-                  <!-- Project 2: AI Support -->
-                  <div class="glass p-6 rounded-2xl group hover:border-indigo-500/50 transition-all">
-                      <div class="w-12 h-12 bg-indigo-500/20 rounded-lg flex items-center justify-center text-indigo-400 mb-6
-  group-hover:scale-110 transition-transform">
-                          <i data-lucide="message-square"></i>
+                  <!-- Project 2: AI Support Agent -->
+                  <div class="md:col-span-4 bento-item glass rounded-3xl overflow-hidden group" data-aos="fade-left">
+                      <div class="h-48 relative overflow-hidden">
+                          <img src="https://images.unsplash.com/photo-1531746020665-975d863609d2?auto=format&fit=crop&q=80&w=800" 
+  class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" alt="AI Support">
                       </div>
-                      <h3 class="text-xl font-bold mb-3 group-hover:text-indigo-400 transition-colors">AI Customer Support</h3>
-                      <p class="text-slate-400 text-sm mb-6 leading-relaxed">
-                          Autonomous support agent designed to handle high-volume customer queries with human-like reasoning and
-  domain-specific accuracy.
-                      </p>
-                      <div class="flex flex-wrap gap-2 mb-6">
-                          <span class="px-2 py-1 rounded-md bg-slate-800 text-[10px] font-medium text-slate-300 border
-  border-slate-700">Python</span>
-                          <span class="px-2 py-1 rounded-md bg-slate-800 text-[10px] font-medium text-slate-300 border
-  border-slate-700">LLMs</span>
-                          <span class="px-2 py-1 rounded-md bg-slate-800 text-[10px] font-medium text-slate-300 border
-  border-slate-700">API Integration</span>
+                      <div class="p-6">
+                          <div class="flex space-x-2 mb-3">
+                              <span class="px-2 py-1 rounded bg-purple-500/20 text-purple-400 text-[10px] font-bold uppercase">Autonomous
+  Agents</span>
+                          </div>
+                          <h3 class="text-xl font-bold mb-2 text-white">AI Support Agent</h3>
+                          <p class="text-slate-400 text-sm mb-4">Automating customer support with LLM-driven reasoning.</p>
+                          <a href="https://github.com/Abhinandan305/ai-customer-support-system" target="_blank" class="text-indigo-400
+  text-xs font-bold flex items-center hover:underline">View Code <i data-lucide="external-link" class="ml-1 w-3 h-3"></i></a>
                       </div>
-                      <a href="https://github.com/Abhinandan305/ai-customer-support-system" target="_blank" class="inline-flex
-  items-center text-sm font-semibold text-indigo-400 hover:text-indigo-300 transition-colors">
-                          Source Code <i data-lucide="github" class="ml-1 w-4 h-4"></i>
-                      </a>
                   </div>
 
-                  <!-- Project 3: AI Travel -->
-                  <div class="glass p-6 rounded-2xl group hover:border-indigo-500/50 transition-all">
-                      <div class="w-12 h-12 bg-indigo-500/20 rounded-lg flex items-center justify-center text-indigo-400 mb-6
-  group-hover:scale-110 transition-transform">
-                          <i data-lucide="map"></i>
+                  <!-- Project 3: Data Science Lab (Wide Bento) -->
+                  <div class="md:col-span-12 bento-item glass rounded-3xl p-8 group" data-aos="fade-up">
+                      <div class="flex flex-col md:flex-row gap-8 items-center">
+                          <div class="md:w-1/3">
+                              <div class="flex space-x-2 mb-4">
+                                  <span class="px-2 py-1 rounded bg-emerald-500/20 text-emerald-400 text-[10px] font-bold uppercase">Data
+  Science Lab</span>
+                                  <span class="px-2 py-1 rounded bg-orange-500/20 text-orange-400 text-[10px] font-bold
+  uppercase">Analytics</span>
+                              </div>
+                              <h3 class="text-3xl font-bold mb-4 text-white">Scientific Analysis Hub</h3>
+                              <p class="text-slate-400 mb-6 leading-relaxed">
+                                  A comprehensive collection of projects focusing on statistical modeling, predictive analytics, and deep
+  exploratory data analysis.
+                              </p>
+                              <a href="https://github.com/Abhinandan305/DATA-SCIENCE-PROJECTS" target="_blank" class="px-6 py-3 rounded-xl
+  bg-indigo-600 text-white font-bold text-sm hover:bg-indigo-500 transition-all">Explore Research</a>
+                          </div>
+                          <div class="md:w-2/3 grid grid-cols-1 sm:grid-cols-2 gap-4">
+                              <!-- DS Project 1 -->
+                              <div class="glass p-4 rounded-2xl flex items-center space-x-4 border-l-4 border-indigo-500
+  hover:bg-slate-800 transition-colors cursor-pointer">
+                                  <div class="p-2 bg-indigo-500/20 rounded-lg text-indigo-400"><i data-lucide="line-chart"></i></div>
+                                  <div>
+                                      <h4 class="text-sm font-bold text-white">Predictive Modeling</h4>
+                                      <p class="text-[10px] text-slate-500">Time Series & Regression Analysis</p>
+                                  </div>
+                              </div>
+                              <!-- DS Project 2 -->
+                              <div class="glass p-4 rounded-2xl flex items-center space-x-4 border-l-4 border-emerald-500
+  hover:bg-slate-800 transition-colors cursor-pointer">
+                                  <div class="p-2 bg-emerald-500/20 rounded-lg text-emerald-400"><i data-lucide="layers"></i></div>
+                                  <div>
+                                      <h4 class="text-sm font-bold text-white">Cluster Intelligence</h4>
+                                      <p class="text-[10px] text-slate-500">K-Means & PCA Implementation</p>
+                                  </div>
+                              </div>
+                              <!-- DS Project 3 -->
+                              <div class="glass p-4 rounded-2xl flex items-center space-x-4 border-l-4 border-purple-500
+  hover:bg-slate-800 transition-colors cursor-pointer">
+                                  <div class="p-2 bg-purple-500/20 rounded-lg text-purple-400"><i data-lucide="brain-circuit"></i></div>
+                                  <div>
+                                      <h4 class="text-sm font-bold text-white">NLP Pipelines</h4>
+                                      <p class="text-[10px] text-slate-500">Sentiment & Text Mining</p>
+                                  </div>
+                              </div>
+                              <!-- DS Project 4 -->
+                              <div class="glass p-4 rounded-2xl flex items-center space-x-4 border-l-4 border-orange-500
+  hover:bg-slate-800 transition-colors cursor-pointer">
+                                  <div class="p-2 bg-orange-500/20 rounded-lg text-orange-400"><i data-lucide="database"></i></div>
+                                  <div>
+                                      <h4 class="text-sm font-bold text-white">Feature Engineering</h4>
+                                      <p class="text-[10px] text-slate-500">Advanced ETL & Pre-processing</p>
+                                  </div>
+                              </div>
+                          </div>
                       </div>
-                      <h3 class="text-xl font-bold mb-3 group-hover:text-indigo-400 transition-colors">AI Travel Planner</h3>
-                      <p class="text-slate-400 text-sm mb-6 leading-relaxed">
-                          A smart itinerary engine that generates hyper-personalized travel plans based on user preferences and real-time
-  data.
-                      </p>
-                      <div class="flex flex-wrap gap-2 mb-6">
-                          <span class="px-2 py-1 rounded-md bg-slate-800 text-[10px] font-medium text-slate-300 border
-  border-slate-700">Python</span>
-                          <span class="px-2 py-1 rounded-md bg-slate-800 text-[10px] font-medium text-slate-300 border
-  border-slate-700">AI Agents</span>
-                          <span class="px-2 py-1 rounded-md bg-slate-800 text-[10px] font-medium text-slate-300 border
-  border-slate-700">Prompt Eng</span>
-                      </div>
-                      <a href="https://github.com/Abhinandan305/ai-travel-planner" target="_blank" class="inline-flex items-center text-sm
-  font-semibold text-indigo-400 hover:text-indigo-300 transition-colors">
-                          Source Code <i data-lucide="github" class="ml-1 w-4 h-4"></i>
-                      </a>
                   </div>
-              </div>
 
-              <!-- Other Projects Section -->
-              <div class="mt-12 grid md:grid-cols-2 gap-6">
-                  <div class="glass p-6 rounded-2xl flex items-center justify-between group hover:border-slate-600 transition-all">
-                      <div class="flex items-center">
-                          <div class="w-10 h-10 bg-slate-800 rounded-lg flex items-center justify-center text-slate-400 mr-4">
-                              <i data-lucide="trending-down"></i>
+                  <!-- Project 4: Churn ANN -->
+                  <div class="md:col-span-6 bento-item glass rounded-3xl overflow-hidden group" data-aos="fade-right">
+                      <div class="grid md:grid-cols-2">
+                          <div class="p-6">
+                              <h3 class="text-xl font-bold mb-2 text-white">Customer Churn ANN</h3>
+                              <p class="text-slate-400 text-sm mb-4">Neural network for behavioral prediction with 90%+ accuracy.</p>
+                              <a href="https://github.com/Abhinandan305/ANN-CUSTOMER-CHURN-PREDICTION" target="_blank" 
+  class="text-indigo-400 text-xs font-bold flex items-center hover:underline">View Code <i data-lucide="external-link" class="ml-1 w-3
+  h-3"></i></a>
                           </div>
-                          <div>
-                              <h4 class="font-semibold">Churn Prediction ANN</h4>
-                              <p class="text-xs text-slate-500">Artificial Neural Networks for customer behavior analytics</p>
-                          </div>
-                      </div>
-                      <a href="https://github.com/Abhinandan305/ANN-CUSTOMER-CHURN-PREDICTION" target="_blank" class="text-slate-400
-  hover:text-white transition-colors">
-                          <i data-lucide="github" class="w-5 h-5"></i>
-                      </a>
-                  </div>
-                  <div class="glass p-6 rounded-2xl flex items-center justify-between group hover:border-slate-600 transition-all">
-                      <div class="flex items-center">
-                          <div class="w-10 h-10 bg-slate-800 rounded-lg flex items-center justify-center text-slate-400 mr-4">
-                              <i data-lucide="layout"></i>
-                          </div>
-                          <div>
-                              <h4 class="font-semibold">Enterprise ERP System</h4>
-                              <p class="text-xs text-slate-500">Complex Python-based business resource management</p>
+                          <div class="relative h-32 md:h-auto overflow-hidden">
+                              <img src="https://images.unsplash.com/photo-1551288049-bebda4e38a71?auto=format&fit=crop&q=80&w=800" 
+  class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" alt="Churn Analytics">
                           </div>
                       </div>
-                      <a href="https://github.com/Abhinandan305/BM-11349153-ERP" target="_blank" class="text-slate-400 hover:text-white
-  transition-colors">
-                          <i data-lucide="github" class="w-5 h-5"></i>
-                      </a>
                   </div>
+
+                  <!-- Project 5: Travel AI -->
+                  <div class="md:col-span-6 bento-item glass rounded-3xl overflow-hidden group" data-aos="fade-left">
+                      <div class="grid md:grid-cols-2">
+                          <div class="p-6">
+                              <h3 class="text-xl font-bold mb-2 text-white">AI Travel Planner</h3>
+                              <p class="text-slate-400 text-sm mb-4">Personalized itinerary engine utilizing advanced prompt chains.</p>
+                              <a href="https://github.com/Abhinandan305/ai-travel-planner" target="_blank" class="text-indigo-400 text-xs
+  font-bold flex items-center hover:underline">View Code <i data-lucide="external-link" class="ml-1 w-3 h-3"></i></a>
+                          </div>
+                          <div class="relative h-32 md:h-auto overflow-hidden">
+                              <img src="https://images.unsplash.com/photo-1488646953014-bc569aefca07?auto=format&fit=crop&q=80&w=800" 
+  class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" alt="Travel AI">
+                          </div>
+                      </div>
+                  </div>
+
               </div>
           </div>
       </section>
 
-      <!-- Skills Section -->
-      <section id="skills" class="py-20 px-6 bg-slate-900/50">
-          <div class="max-w-6xl mx-auto">
-              <div class="text-center mb-16">
-                  <h2 class="text-3xl font-bold mb-4">Technical Arsenal</h2>
-                  <p class="text-slate-400">The tools I use to bring intelligent ideas to life</p>
+      <!-- Skill Matrix -->
+      <section id="skills" class="py-24 px-6 bg-slate-900/30">
+          <div class="max-w-7xl mx-auto">
+              <div class="text-center mb-16" data-aos="fade-up">
+                  <h2 class="text-4xl font-bold mb-4 text-white">Technical Arsenal</h2>
+                  <p class="text-slate-400">A comprehensive stack for the modern AI era</p>
               </div>
 
-              <div class="grid md:grid-cols-3 gap-8">
-                  <!-- AI & ML -->
-                  <div class="glass p-8 rounded-3xl">
+              <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                  <!-- AI Engineer -->
+                  <div class="glass p-8 rounded-3xl bento-item border-t-4 border-indigo-500" data-aos="fade-up" data-aos-delay="100">
                       <div class="flex items-center mb-6">
-                          <i data-lucide="cpu" class="text-indigo-400 mr-3"></i>
-                          <h3 class="text-xl font-bold">AI & ML</h3>
+                          <div class="p-3 bg-indigo-500/20 rounded-2xl text-indigo-400 mr-4"><i data-lucide="bot"></i></div>
+                          <h3 class="text-2xl font-bold text-white">AI Engineer</h3>
                       </div>
-                      <ul class="space-y-3 text-slate-400 text-sm">
-                          <li class="flex items-center"><span class="w-1.5 h-1.5 bg-indigo-500 rounded-full mr-2"></span> Large Language
-  Models (LLMs)</li>
-                          <li class="flex items-center"><span class="w-1.5 h-1.5 bg-indigo-500 rounded-full mr-2"></span> RAG
-  Architectures</li>
-                          <li class="flex items-center"><span class="w-1.5 h-1.5 bg-indigo-500 rounded-full mr-2"></span> Neural Networks
-  (ANN)</li>
-                          <li class="flex items-center"><span class="w-1.5 h-1.5 bg-indigo-500 rounded-full mr-2"></span> Prompt
-  Engineering</li>
+                      <ul class="space-y-4">
+                          <li class="flex items-start text-slate-400 text-sm">
+                              <i data-lucide="check-circle-2" class="w-4 h-4 mr-3 text-indigo-500 mt-1"></i>
+                              <span><b class="text-slate-200">Generative AI:</b> LLMs (GPT-4, Claude 3, Llama), Prompt Eng.</span>
+                          </li>
+                          <li class="flex items-start text-slate-400 text-sm">
+                              <i data-lucide="check-circle-2" class="w-4 h-4 mr-3 text-indigo-500 mt-1"></i>
+                              <span><b class="text-slate-200">RAG Architecture:</b> LangChain, LlamaIndex, Hybrid Retrieval</span>
+                          </li>
+                          <li class="flex items-start text-slate-400 text-sm">
+                              <i data-lucide="check-circle-2" class="w-4 h-4 mr-3 text-indigo-500 mt-1"></i>
+                              <span><b class="text-slate-200">Vector Systems:</b> Pinecone, ChromaDB, Milvus, FAISS</span>
+                          </li>
+                          <li class="flex items-start text-slate-400 text-sm">
+                              <i data-lucide="check-circle-2" class="w-4 h-4 mr-3 text-indigo-500 mt-1"></i>
+                              <span><b class="text-slate-200">Deployment:</b> FastAPI, Docker, RESTful APIs</span>
+                          </li>
                       </ul>
                   </div>
 
-                  <!-- Data Science -->
-                  <div class="glass p-8 rounded-3xl">
+                  <!-- ML Engineer -->
+                  <div class="glass p-8 rounded-3xl bento-item border-t-4 border-emerald-500" data-aos="fade-up" data-aos-delay="200">
                       <div class="flex items-center mb-6">
-                          <i data-lucide="bar-chart-3" class="text-indigo-400 mr-3"></i>
-                          <h3 class="text-xl font-bold">Data Science</h3>
+                          <div class="p-3 bg-emerald-500/20 rounded-2xl text-emerald-400 mr-4"><i data-lucide="cpu"></i></div>
+                          <h3 class="text-2xl font-bold text-white">ML Engineer</h3>
                       </div>
-                      <ul class="space-y-3 text-slate-400 text-sm">
-                          <li class="flex items-center"><span class="w-1.5 h-1.5 bg-indigo-500 rounded-full mr-2"></span> Pandas &
-  NumPy</li>
-                          <li class="flex items-center"><span class="w-1.5 h-1.5 bg-indigo-500 rounded-full mr-2"></span>
-  Scikit-Learn</li>
-                          <li class="flex items-center"><span class="w-1.5 h-1.5 bg-indigo-500 rounded-full mr-2"></span> Jupyter
-  Notebooks</li>
-                          <li class="flex items-center"><span class="w-1.5 h-1.5 bg-indigo-500 rounded-full mr-2"></span> Predictive
-  Analytics</li>
+                      <ul class="space-y-4">
+                          <li class="flex items-start text-slate-400 text-sm">
+                              <i data-lucide="check-circle-2" class="w-4 h-4 mr-3 text-emerald-500 mt-1"></i>
+                              <span><b class="text-slate-200">Frameworks:</b> PyTorch, TensorFlow, Scikit-Learn</span>
+                          </li>
+                          <li class="flex items-start text-slate-400 text-sm">
+                              <i data-lucide="check-circle-2" class="w-4 h-4 mr-3 text-emerald-500 mt-1"></i>
+                              <span><b class="text-slate-200">MLOps:</b> MLflow, Weights & Biases, DVC, Kubernetes</span>
+                          </li>
+                          <li class="flex items-start text-slate-400 text-sm">
+                              <i data-lucide="check-circle-2" class="w-4 h-4 mr-3 text-emerald-500 mt-1"></i>
+                              <span><b class="text-slate-200">Optimization:</b> Quantization, LoRA, PEFT, Pruning</span>
+                          </li>
+                          <li class="flex items-start text-slate-400 text-sm">
+                              <i data-lucide="check-circle-2" class="w-4 h-4 mr-3 text-emerald-500 mt-1"></i>
+                              <span><b class="text-slate-200">Infrastructure:</b> AWS Sagemaker, GCP Vertex AI</span>
+                          </li>
                       </ul>
                   </div>
 
-                  <!-- Core Dev -->
-                  <div class="glass p-8 rounded-3xl">
+                  <!-- Data Scientist -->
+                  <div class="glass p-8 rounded-3xl bento-item border-t-4 border-orange-500" data-aos="fade-up" data-aos-delay="300">
                       <div class="flex items-center mb-6">
-                          <i data-lucide="code-2" class="text-indigo-400 mr-3"></i>
-                          <h3 class="text-xl font-bold">Core Development</h3>
+                          <div class="p-3 bg-orange-500/20 rounded-2xl text-orange-400 mr-4"><i data-lucide="bar-chart-3"></i></div>
+                          <h3 class="text-2xl font-bold text-white">Data Scientist</h3>
                       </div>
-                      <ul class="space-y-3 text-slate-400 text-sm">
-                          <li class="flex items-center"><span class="w-1.5 h-1.5 bg-indigo-500 rounded-full mr-2"></span> Python
-  (Advanced)</li>
-                          <li class="flex items-center"><span class="w-1.5 h-1.5 bg-indigo-500 rounded-full mr-2"></span> Git &
-  GitHub</li>
-                          <li class="flex items-center"><span class="w-1.5 h-1.5 bg-indigo-500 rounded-full mr-2"></span> RESTful
-  APIs</li>
-                          <li class="flex items-center"><span class="w-1.5 h-1.5 bg-indigo-500 rounded-full mr-2"></span> System
-  Architecture</li>
+                      <ul class="space-y-4">
+                          <li class="flex items-start text-slate-400 text-sm">
+                              <i data-lucide="check-circle-2" class="w-4 h-4 mr-3 text-orange-500 mt-1"></i>
+                              <span><b class="text-slate-200">Core Stack:</b> Pandas, NumPy, Advanced SQL, PySpark</span>
+                          </li>
+                          <li class="flex items-start text-slate-400 text-sm">
+                              <i data-lucide="check-circle-2" class="w-4 h-4 mr-3 text-orange-500 mt-1"></i>
+                              <span><b class="text-slate-200">Statistics:</b> Hypothesis Testing, Bayesian Inf, A/B Testing</span>
+                          </li>
+                          <li class="flex items-start text-slate-400 text-sm">
+                              <i data-lucide="check-circle-2" class="w-4 h-4 mr-3 text-orange-500 mt-1"></i>
+                              <span><b class="text-slate-200">Visualization:</b> Plotly, Seaborn, Matplotlib, Tableau</span>
+                          </li>
+                          <li class="flex items-start text-slate-400 text-sm">
+                              <i data-lucide="check-circle-2" class="w-4 h-4 mr-3 text-orange-500 mt-1"></i>
+                              <span><b class="text-slate-200">Predictive:</b> XGBoost, LightGBM, Random Forests</span>
+                          </li>
                       </ul>
                   </div>
               </div>
@@ -273,21 +362,17 @@
       </section>
 
       <!-- Footer -->
-      <footer class="py-12 px-6 border-t border-slate-800">
-          <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
+      <footer class="py-12 px-6 border-t border-white/5">
+          <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
               <p class="text-slate-500 text-sm">
-                  &copy; 2026 Abhinandan. Built with <span class="text-indigo-400">Tailwind CSS</span>.
+                  &copy; 2026 Abhinandan. Engineered for Performance.
               </p>
               <div class="flex space-x-6">
-                  <a href="https://github.com/Abhinandan305" target="_blank" class="text-slate-400 hover:text-white transition-colors">
-                      <i data-lucide="github"></i>
-                  </a>
-                  <a href="#" class="text-slate-400 hover:text-white transition-colors">
-                      <i data-lucide="linkedin"></i>
-                  </a>
-                  <a href="mailto:your-email@example.com" class="text-slate-400 hover:text-white transition-colors">
-                      <i data-lucide="mail"></i>
-                  </a>
+                  <a href="https://github.com/Abhinandan305" target="_blank" class="text-slate-400 hover:text-white transition-colors"><i 
+  data-lucide="github"></i></a>
+                  <a href="#" class="text-slate-400 hover:text-white transition-colors"><i data-lucide="linkedin"></i></a>
+                  <a href="mailto:your-email@example.com" class="text-slate-400 hover:text-white transition-colors"><i 
+  data-lucide="mail"></i></a>
               </div>
           </div>
       </footer>
@@ -295,6 +380,12 @@
       <script>
           // Initialize Lucide Icons
           lucide.createIcons();
+          // Initialize AOS
+          AOS.init({
+              duration: 800,
+              once: true,
+              easing: 'ease-out-quad'
+          });
       </script>
   </body>
   </html>
