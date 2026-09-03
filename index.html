@@ -15,6 +15,66 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="styles.css" />
+    <style>
+      .tech-stack-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 1px;
+        background: currentColor;
+        margin-top: 2.5rem;
+      }
+
+      .tech-stack-card {
+        position: relative;
+        background: var(--bg, #f5f3ee);
+        padding: 2rem;
+        min-height: 250px;
+      }
+
+      .tech-stack-number {
+        display: block;
+        font-family: "DM Mono", monospace;
+        font-size: 0.75rem;
+        opacity: 0.55;
+        margin-bottom: 2.5rem;
+      }
+
+      .tech-stack-card h3 {
+        margin: 0 0 0.7rem;
+      }
+
+      .tech-stack-card p {
+        max-width: 560px;
+        margin: 0 0 1.4rem;
+        opacity: 0.72;
+        line-height: 1.65;
+      }
+
+      .tech-tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+      }
+
+      .tech-tags span {
+        display: inline-flex;
+        align-items: center;
+        border: 1px solid currentColor;
+        border-radius: 999px;
+        padding: 0.42rem 0.7rem;
+        font-family: "DM Mono", monospace;
+        font-size: 0.68rem;
+        letter-spacing: 0.02em;
+        opacity: 0.78;
+      }
+
+      @media (max-width: 760px) {
+        .tech-stack-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+
   </head>
   <body>
     <div class="grain" aria-hidden="true"></div>
@@ -89,7 +149,6 @@
         <div class="filter-row" role="group" aria-label="Filter projects">
           <button class="filter-button active" data-filter="all">All work</button>
           <button class="filter-button" data-filter="product">AI products</button>
-          <button class="filter-button" data-filter="research">Research</button>
           <button class="filter-button" data-filter="systems">Systems</button>
         </div>
 
@@ -107,7 +166,7 @@
               <div class="project-meta"><span>AI PRODUCT</span><span>2024</span></div>
               <h3>AI Customer Support System</h3>
               <p>An intelligent customer support platform combining RAG, semantic caching, verification, and LLM-powered responses for grounded, reliable assistance.</p>
-              <div class="project-footer"><span>Python · LangChain · RAG · LLMs</span><a href="https://github.com/Abhinandan305/ai-customer-support-system" target="_blank" rel="noreferrer" aria-label="View AI Customer Support System project">View on GitHub ↗</a></div>
+              <div class="project-footer"><span>Python · LangChain · RAG · LLMs· Semantic Caching · Routing · Cost and token metrics</span><a href="https://github.com/Abhinandan305/ai-customer-support-system" target="_blank" rel="noreferrer" aria-label="View AI Customer Support System project">View on GitHub ↗</a></div>
             </div>
           </article>
 
@@ -178,6 +237,76 @@
               <div class="project-footer"><span>Pandas · Prophet · XGBoost</span><a href="#" aria-label="View Retail Sales project">View case study ↗</a></div>
             </div>
           </article>
+        </div>
+      </section>
+
+
+      <section class="tech-stack-section section-shell" id="tech-stack">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">02 / Tech stack</p>
+            <h2>Built across the<br /><em>AI stack.</em></h2>
+          </div>
+          <p class="section-note">A practical toolkit spanning machine learning, data science, generative AI, and production systems.</p>
+        </div>
+
+        <div class="tech-stack-grid">
+          <div class="tech-stack-card">
+            <span class="tech-stack-number">01</span>
+            <h3>Machine Learning &amp; Data Science</h3>
+            <p>Building predictive models, classification systems, anomaly detection pipelines, and time-series solutions.</p>
+            <div class="tech-tags">
+              <span>Python</span>
+              <span>Scikit-Learn</span>
+              <span>XGBoost</span>
+              <span>TensorFlow</span>
+              <span>Keras</span>
+              <span>Pandas</span>
+              <span>Prophet</span>
+            </div>
+          </div>
+
+          <div class="tech-stack-card">
+            <span class="tech-stack-number">02</span>
+            <h3>Generative AI &amp; LLMs</h3>
+            <p>Designing grounded AI applications with retrieval, agents, embeddings, vector search, and LLM-powered workflows.</p>
+            <div class="tech-tags">
+              <span>LLMs</span>
+              <span>RAG</span>
+              <span>LangChain</span>
+              <span>CrewAI</span>
+              <span>ChromaDB</span>
+              <span>Groq</span>
+              <span>LLaMA 3</span>
+            </div>
+          </div>
+
+          <div class="tech-stack-card">
+            <span class="tech-stack-number">03</span>
+            <h3>AI Engineering &amp; Backend</h3>
+            <p>Turning models and AI workflows into usable applications with APIs, real-time processing, and evaluation-minded systems.</p>
+            <div class="tech-tags">
+              <span>FastAPI</span>
+              <span>Kafka</span>
+              <span>Python</span>
+              <span>RAG Systems</span>
+              <span>Semantic Caching</span>
+              <span>Model Evaluation</span>
+            </div>
+          </div>
+
+          <div class="tech-stack-card">
+            <span class="tech-stack-number">04</span>
+            <h3>Applications &amp; Deployment</h3>
+            <p>Shipping interactive AI products and taking them from prototype to accessible, deployable experiences.</p>
+            <div class="tech-tags">
+              <span>Streamlit</span>
+              <span>AWS EC2</span>
+              <span>PDF Generation</span>
+              <span>Document Processing</span>
+              <span>API Integration</span>
+            </div>
+          </div>
         </div>
       </section>
 
